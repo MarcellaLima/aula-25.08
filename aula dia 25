@@ -1,0 +1,42 @@
+
+#num1
+
+#for i in range(7):
+   temp = float(input(f'Temperatura do dia' {i+1}: '))
+temperaturas.append(temp)
+
+
+
+
+
+#num 2
+
+lista = []
+while True:
+    item = input('Adicione um item e quando terminar digite "sair": ')
+    if item == 'sair':
+        break
+    lista.append(item)
+lista.sort()
+print('\nSua lista de compras:')
+for item in lista:
+    print(item)
+
+#num3
+
+numeros_pares = []
+numeros_impares = []
+
+for i in range(10):
+    numero = int(input(f"Digite o {i+1} numero inteiro: "))
+
+    if numero % 2 == 0:
+        numeros_pares.append(numero)
+    else:
+        numeros_impares.append(numero)
+
+print(f"\Voce digitou {len(numeros_pares)} numeros pares.")
+print(f"\Voce digitou {len(numeros_impares)} numeros pares.")
+
+
+#num4
