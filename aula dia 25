@@ -1,13 +1,23 @@
 
 #num1
 
-#for i in range(7):
-   temp = float(input(f'Temperatura do dia' {i+1}: '))
-temperaturas.append(temp)
+temperaturas = []
+for i in range(7):
+    temperaturas.append(float(input("Temperatura: ")))
 
+media = sum(temperaturas) / 7
+print("Média:", media)
 
+mais_quente = max(temperaturas)
+mais_frio = min(temperaturas)
+print("Mais quente:", mais_quente)
+print("Mais frio:", mais_frio)
 
-
+acima = 0
+for t in temperaturas:
+    if t > media:
+        acima += 1
+print("Dias acima da média:", acima)
 
 #num 2
 
@@ -36,7 +46,48 @@ for i in range(10):
         numeros_impares.append(numero)
 
 print(f"\Voce digitou {len(numeros_pares)} numeros pares.")
-print(f"\Voce digitou {len(numeros_impares)} numeros pares.")
+print(f"\Voce digitou {len(numeros_impares)} numeros impares.")
 
 
 #num4
+
+nomes = []
+precos = []
+
+while True:
+    nome = input("Nome do produto (ou 'fim'): ")
+    if nome == 'fim':
+        break
+    preco = float(input("Preço: "))
+    nomes.append(nome)
+    precos.append(preco)
+
+total = 0
+for p in precos:
+    total += p
+print("Total arrecadado:", total)
+
+if precos:
+    maior = precos[0]
+    menor = precos[0]
+    nome_maior = nomes[0]
+    nome_menor = nomes[0]
+
+    for i in range(1, len(precos)):
+        if precos[i] > maior:
+            maior = precos[i]
+            nome_maior = nomes[i]
+        if precos[i] < menor:
+            menor = precos[i]
+            nome_menor = nomes[i]
+
+    print("Mais caro:", nome_maior, "-", maior)
+    print("Mais barato:", nome_menor, "-", menor)
+else:
+    print("Nenhuma venda registrada.")
+
+busca = input("Nome do produto para buscar: ")
+if busca in nomes:
+    print("Produto foi vendido.")
+else:
+    print("Produto NÃO foi vendido.")
